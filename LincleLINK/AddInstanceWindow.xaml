@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LincleLINK"
         mc:Ignorable="d"
-        Title="Add instance" Height="450" Width="800">
+        Title="Add instance" Height="450" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}">
     <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"></RowDefinition>
@@ -57,22 +58,7 @@
             </VirtualizingStackPanel>
         </ScrollViewer>
 
-        <ProgressBar Grid.Row="7" Value="{Binding Progress}">
-            <ProgressBar.Foreground>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <LinearGradientBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                            <SkewTransform CenterX="0.5" CenterY="0.5" AngleX="0" AngleY="0"/>
-                            <RotateTransform Angle="90" CenterX="0.5" CenterY="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </LinearGradientBrush.RelativeTransform>
-                    <GradientStop Color="#FF1C47F5"/>
-                    <GradientStop Color="#FF09F718" Offset="1"/>
-                </LinearGradientBrush>
-            </ProgressBar.Foreground>
-        </ProgressBar>
+        <ProgressBar Grid.Row="7" Value="{Binding Progress}" Foreground="{DynamicResource ProgressBrush}"></ProgressBar>
 
     </Grid>
 </Window>

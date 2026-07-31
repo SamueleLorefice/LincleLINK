@@ -191,6 +191,16 @@ namespace LincleLINK
             }
         }
 
+        public bool IsDarkTheme
+        {
+            get { return ThemeManager.IsDark; }
+            set
+            {
+                ThemeManager.ApplyTheme(value);
+                OnPropertyChanged(nameof(IsDarkTheme));
+            }
+        }
+
         public SynchronizationContext UIContext { get; set; }
         public Dictionary<PassedFileInfo, HashSet<long>>? FilePieceMap { get; set; }
         public List<long>? BadPieces { get; set; }

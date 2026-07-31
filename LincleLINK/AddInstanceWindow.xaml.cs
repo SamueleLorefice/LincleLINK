@@ -22,6 +22,7 @@ namespace LincleLINK
         public AddInstanceWindow()
         {
             InitializeComponent();
+            SourceInitialized += (s, e) => ThemeManager.ApplyImmersiveTitleBar(this);
             DataContext = new AddInstanceWindowLogic();
         }
     }

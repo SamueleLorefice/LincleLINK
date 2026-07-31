@@ -13,5 +13,10 @@ namespace LincleLINK
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            ThemeManager.ApplyTheme(ThemeManager.IsDark);
+            base.OnStartup(e);
+        }
     }
 }

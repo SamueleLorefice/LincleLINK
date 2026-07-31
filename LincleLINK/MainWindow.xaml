@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LincleLINK"
         mc:Ignorable="d"
-        Title="LincleLINK &quot;It never ends&quot;" Height="450" Width="800">
+        Title="LincleLINK &quot;It never ends&quot;" Height="450" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}">
 
     <Grid x:Name="LayoutRoot" Margin="5">
         <Grid.ColumnDefinitions>
@@ -19,9 +20,9 @@
             <RowDefinition Height="25" MinHeight="25"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <GridSplitter Grid.Row="1" Grid.ColumnSpan="4" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="#FF04DDF9"/>
+        <GridSplitter Grid.Row="1" Grid.ColumnSpan="4" Height="5" HorizontalAlignment="Stretch" VerticalAlignment="Center" Background="{DynamicResource AccentBrush}"/>
 
-        <TabControl>
+        <TabControl Background="{DynamicResource WindowBackgroundBrush}">
             <TabItem Header="Instances" TabIndex="0">
                 <Grid x:Name="InstancesGrid">
                     <Grid.ColumnDefinitions>
@@ -161,12 +162,14 @@
                         <RowDefinition Height="20"></RowDefinition>
                         <RowDefinition Height="20"></RowDefinition>
                         <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="0" Text="{Binding DBSize, StringFormat=db folder size: {0}}"></TextBlock>
                     <TextBlock Grid.Row="1" Text="{Binding Savings, StringFormat=You are saving: {0}}"></TextBlock>
                     <TextBlock Grid.Row="2" Text="{Binding FreeSpace, StringFormat=Free drive space {0}}"></TextBlock>
                     <Button Grid.Row="3" Content="Import DBInfo.xml" IsEnabled="{Binding IsFree}"  Command="{Binding ImportLegacyCommand}"></Button>
+                    <CheckBox Grid.Row="4" Content="Dark mode" IsChecked="{Binding IsDarkTheme, Mode=TwoWay}"></CheckBox>
 
                 </Grid>
             </TabItem>
@@ -185,6 +188,6 @@
             </VirtualizingStackPanel>
         </ScrollViewer>
 
-        <ProgressBar Grid.Row="3" Value="{Binding Progress}"/>
+        <ProgressBar Grid.Row="3" Value="{Binding Progress}" Foreground="{DynamicResource AccentBrush}"/>
     </Grid>
 </Window>

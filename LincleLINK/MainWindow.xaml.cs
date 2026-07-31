@@ -25,6 +25,7 @@ namespace LincleLINK
         public MainWindow()
         {
             InitializeComponent();
+            SourceInitialized += (s, e) => ThemeManager.ApplyImmersiveTitleBar(this);
             MainWindowControls controls = new(LogScroller, MatchedFilesScroller);
             var uiContext = SynchronizationContext.Current;
             DataContext = new MainWindowLogic(controls, uiContext);
