@@ -207,6 +207,7 @@ public sealed class MainViewModelTests
         saved.DataDirectory.Should().Be("C:\\data");
 
         // Below the minimum clamps back to 1.
+        vm.ThreadCount = 0;
         vm.ThreadCount.Should().Be(1);
         vm.MaxThreadCount.Should().Be(Environment.ProcessorCount);
     }
